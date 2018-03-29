@@ -36,24 +36,52 @@ $\sum^N_{n=1}10^{n-1}d_n=\frac{(10^N-2*10^0)d_0}{19}$\bigskip
 
 \noindent Since we know that the left side of the equation is an 
 integer, we also know that the numerator of the right side had to be 
-divisible by 19! As such, we know that the following must be true
+divisible by 19. As such, we know that one of the following must 
+be true:
 \bigskip
 
-$10^N-2\equiv0 \ (mod \ 19)$\bigskip
+$(10^N-2)(mod \ 19) = 0$\bigskip
+
+$or$\bigskip
+
+$d_0(mod \ 19) = 0$\bigskip
+
+\noindent Because we previously defined $d_n \in \{0,1,2,\ldots,9\}$\bigskip,
+we know that $d_0(mod \ 19) = 0$ can never be true. Therefore $(10^N-2)(mod \ 19) = 0$ 
+must hold true. We can now solve this equation for $N$.\bigskip
 
 \noindent [More explination of how to solve this]\bigskip
 
 \noindent ... we get\bigskip
 
-$N=17n+18 \mbox{ where } n \in \mathbb{Z}_{\geq 0}$\bigskip
+$N=18n+17 \mbox{ where } n \in \mathbb{Z}_{\geq 0}$\bigskip
 
-\noindent This shows us that the smallest possible number that 
-satisfies the problem is 18 digits!  Once we set $N=18$ we observe 
-that the right side of equation - can only take on 10 different values 
-(i.e. each of the 10 possible values for $d_0$). Starting from $0$ we 
-find that $d_0=2$ is the first value to satisfy equation -.  We can now
- construct our number\bigskip
+\noindent The smallest value that satisfies this equation is $n = 0$. This yields
+a of 17 for $N$. Because $N$ respresents the largest power of 10 found in our solution and our
+indexing begins at 0, we can deduce that the smallest possible number that 
+satisfies the problem is 18 digits. Once we set $N=17$ we observe 
+that the right side of equation becomes: \bigskip
 
-$10*\frac{(10^{18}-2)*2}{19}+2=\ldots$
+$\sum^N_{n=1}10^{n-1}d_n=\frac{(10^17-2*10^0)d_0}{19}
+
+We now see that the left side of the equation can only take on 10 different values 
+(i.e. each of the 10 possible values for $d_0$) and represents the first 17 digits
+of the solution. Starting from $0$, we find that $d_0=2$ is the first value 
+to satisfy the equation.\bigskip
+
+$\frac{(10^17-2*10^0)*2}{19} = 10,526,315,789,473,684$\bigskip
+
+\noindent Tacking on $d_0$ to the end of this number yields the following number
+and the solution to the riddle.
+
+$105,263,157,894,736,842$\bigskip
+
+\noindent Move the 2 to the front of the number.\bigskip
+
+$210,526,315,789,473,684$\bigskip
+
+\noindent and 
+
+$210,526,315,789,473,684 = 2*105,263,157,894,736,842$
 
 \end{document}
