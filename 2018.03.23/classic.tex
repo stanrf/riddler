@@ -1,0 +1,59 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\begin{document}
+
+
+
+\section{Problem}
+
+"Imagine taking a number and moving its last digit to the front. 
+For example, 1,234 would become 4,123. What is the smallest positive 
+integer such that when you do this, the result is exactly double the 
+original number? (For bonus points, solve this one without a 
+computer.)"
+
+\section{Solution}
+
+Let's begin by writing out numbers in the following form\bigskip
+
+$10^Nd_N+10^{N-1}d_{N-1}+\cdots+10^1d_1+10^0d_0=\sum^N_{n=0}10^nd_n 
+\newline \indent \mbox{ where }d_n \in \{0,1,2,\ldots,9\}$\bigskip
+
+\noindent We are looking for a number that satisfies the following 
+equality\bigskip
+
+$2\sum^N_{n=0}10^nd_n=10^Nd_0+\sum^N_{n=1}10^{n-1}d_n$\bigskip
+
+\noindent Rearranging we get\bigskip
+
+$\sum^N_{n=1}(2*10^n-10^{n-1})d_n=(10^N-2*10^0)d_0$\bigskip
+
+\noindent Note that $2*10^n-10^{n-1}=19*10^{n-1}$.  As such we rewrite 
+the equation as follows\bigskip
+
+$\sum^N_{n=1}10^{n-1}d_n=\frac{(10^N-2*10^0)d_0}{19}$\bigskip
+
+\noindent Since we know that the left side of the equation is an 
+integer, we also know that the numerator of the right side had to be 
+divisible by 19! As such, we know that the following must be true
+\bigskip
+
+$10^N-2\equiv0 \ (mod \ 19)$\bigskip
+
+\noindent [More explination of how to solve this]\bigskip
+
+\noindent ... we get\bigskip
+
+$N=17n+18 \mbox{ where } n \in \mathbb{Z}_{\geq 0}$\bigskip
+
+\noindent This shows us that the smallest possible number that 
+satisfies the problem is 18 digits!  Once we set $N=18$ we observe 
+that the right side of equation - can only take on 10 different values 
+(i.e. each of the 10 possible values for $d_0$). Starting from $0$ we 
+find that $d_0=2$ is the first value to satisfy equation -.  We can now
+ construct our number\bigskip
+
+$10*\frac{(10^{18}-2)*2}{19}+2=\ldots$
+
+\end{document}
